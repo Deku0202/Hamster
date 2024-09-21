@@ -9,6 +9,9 @@ import json
 
 from functions import mainfuns
 
+#this will not produce bytecode from python
+sys.dont_write_bytecode = True
+
 red = Fore.LIGHTRED_EX
 yellow = Fore.LIGHTYELLOW_EX
 green = Fore.LIGHTGREEN_EX
