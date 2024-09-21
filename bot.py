@@ -1,4 +1,8 @@
 import sys
+
+#this will not produce bytecode from python
+sys.dont_write_bytecode = True
+
 import os 
 import requests
 from colorama import *
@@ -8,9 +12,9 @@ import random
 import json
 
 from functions import mainfuns
+from functions import login
 
-#this will not produce bytecode from python
-sys.dont_write_bytecode = True
+
 
 red = Fore.LIGHTRED_EX
 yellow = Fore.LIGHTYELLOW_EX
@@ -55,6 +59,10 @@ class Hamster:
             
             #proxy with http and https format
             proxies = mainfuns.format_proxy(proxy)
+            
+            #information
+            login.info(data, proxies)
+            
             
 
 

@@ -1,12 +1,8 @@
 {
     "accounts": [
       {
-        "acc_info": "user=",
-        "proxy_info": "http://user:pass@ip:port"
-      },
-      {
-        "acc_info": "user=",
-        "proxy_info": "http://user:pass@ip:port"
+        "acc_info": "1725595357271SDGWC6j5FbBWVt0XaqPuvvHaHFsrWZgFh2FUiYFKYu5y1EKQ1TBzBAXvL19FA1N27387091608",
+        "proxy_info": "http://bpjzpjxt-rotate:hui3pc6j3hq4@p.webshare.io:80"
       }
     ]
   }

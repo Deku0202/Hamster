@@ -44,6 +44,7 @@ def check_ip(proxy_info):
         actual_ip = response.json().get("ip")
         log(f"{green}Actual IP Address: {white}{actual_ip}")
         return actual_ip
+    
     except requests.exceptions.RequestException as e:
         log(f"{red}IP check failed: {white}{e}")
         return None
