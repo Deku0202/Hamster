@@ -78,6 +78,7 @@ class Hamster:
     
                 #loop the buying skin
                 for i in range(total_skin):
+                                
                     skin_buy.skin(data, proxies, i)
                 
             

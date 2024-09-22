@@ -21,6 +21,10 @@ def skin(data, proxy, number):
     #get the payload
     payload = {"skinId": skin, "timestamp": time}
     
+    #call time delay except the first one
+    if number > 0:
+        mainfuns.delay(5)
+    
     try:
         response = requests.post(
             url=url,
@@ -31,6 +35,8 @@ def skin(data, proxy, number):
         )
         data = response.json()
         
+        
+        
         #print if the skin is already bought 
         if 'error_code' in data:
             mainfuns.log(f"{mainfuns.yellow}{data['error_message']}")
@@ -38,6 +44,7 @@ def skin(data, proxy, number):
         #print if skin successful
         elif 'interludeUser' in data:
             mainfuns.log(f"{mainfuns.green}Successful {skin}")
+            
             
         return
         
