@@ -19,7 +19,7 @@ def skin(data, proxy, number):
     skin = "skin" + number
     
     #get the payload
-    payload = {"skinId": "skin7", "timestamp": time}
+    payload = {"skinId": skin, "timestamp": time}
     
     try:
         response = requests.post(
@@ -35,11 +35,12 @@ def skin(data, proxy, number):
         if 'error_code' in data:
             mainfuns.log(f"{mainfuns.yellow}{data['error_message']}")
         
-        
-        #print the total coin
-        mainfuns.log(f"{mainfuns.green}Total Coins: {mainfuns.white}{total_coins:.2f}")
-    
-        
+        #print if skin successful
+        elif 'interludeUser' in data:
+            mainfuns.log(f"{mainfuns.green}Successful {skin}")
+            
+        return
         
     except:
+        mainfuns.log(f"{mainfuns.red}Error connect to owner")
         return None
