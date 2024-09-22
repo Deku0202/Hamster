@@ -16,7 +16,7 @@ def skin(data, proxy, number):
     time = timestamp()
     
     #get the skin info
-    skin = "skin" + number
+    skin = "skin" + str(number)
     
     #get the payload
     payload = {"skinId": skin, "timestamp": time}

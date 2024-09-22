@@ -62,7 +62,7 @@ class Hamster:
             proxies = mainfuns.format_proxy(proxy)
             
             #information
-            # login.info(data, proxies)
+            login.info(data, proxies)
             
             
             #choose option to do
@@ -75,12 +75,12 @@ class Hamster:
             #if statement for choosing option
             if task == 1:
                 total_skin = 39
-                skin_buy.skin(data,proxies, str(3))
-                # #loop the buying skin
-                # for i in range(total_skin):
-                #     skin_buy.skin(data, proxies, i)
+    
+                #loop the buying skin
+                for i in range(total_skin):
+                    skin_buy.skin(data, proxies, i)
                 
-                
+            
 
 
 #running main function
