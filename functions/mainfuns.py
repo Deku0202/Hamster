@@ -5,6 +5,7 @@ import json
 from datetime import datetime
 import requests
 from requests.auth import HTTPProxyAuth
+import time
 
 red = Fore.LIGHTRED_EX
 yellow = Fore.LIGHTYELLOW_EX
@@ -61,4 +62,15 @@ def proxy(proxy):
     except:
         log(f"{red}Check proxy format: {white}http://user:pass@ip:port")
         return None
+    
+#timedelay add
+def delay(seconds):
+    
+    while seconds >= 0:
+        mins, secs = divmod(seconds, 60)
+        timer = '{:02d}:{:02d}'.format(mins,secs)
+        print(f"{timer}{reset}", end="\r") 
+        time.sleep(1)
+        seconds -= 1
 
+    return
