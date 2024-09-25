@@ -14,6 +14,7 @@ import json
 from functions import mainfuns
 from functions import login
 from functions import skin_buy
+from functions import task
 
 
 
@@ -67,21 +68,24 @@ class Hamster:
             
             #choose option to do
             mainfuns.log(f"{mainfuns.green}Buy all Skins: {mainfuns.white}1")
+            mainfuns.log(f"{mainfuns.green}Complete Tasks: {mainfuns.white}2")
 
             #choose
             print(f"{green}Choose: {reset}", end='')
-            task = int(input())
+            option = int(input())
             
             #if statement for choosing option
-            if task == 1:
+            if option == 1:
                 total_skin = 39
     
                 #loop the buying skin
                 for i in range(total_skin):
                                 
                     skin_buy.skin(data, proxies, i)
-                
             
+            #check total task
+            if option == 2:
+                total_task = task.task_list(data, proxies)
 
 
 #running main function
