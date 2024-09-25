@@ -15,7 +15,7 @@ def task_list(data, proxy):
         )
         data = response.json()
 
-        return data['task']
+        return data['tasks']
         
     except:
         mainfuns.log(f"{mainfuns.red}Error connect to owner")

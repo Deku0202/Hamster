@@ -63,7 +63,7 @@ class Hamster:
             proxies = mainfuns.format_proxy(proxy)
             
             #information
-            login.info(data, proxies)
+            # login.info(data, proxies)
             
             
             #choose option to do
@@ -86,6 +86,13 @@ class Hamster:
             #check total task
             if option == 2:
                 total_task = task.task_list(data, proxies)
+                
+                #take out only the Youtube and social meida tasks
+                for selected_task in total_task:
+                    if selected_task['isCompleted'] == False and (selected_task['id'] != "invite_friends"):
+                        
+                        task_id = selected_task['id']
+                        
 
 
 #running main function
