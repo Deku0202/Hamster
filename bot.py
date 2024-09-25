@@ -10,6 +10,7 @@ from requests.auth import HTTPProxyAuth
 from datetime import datetime
 import random
 import json
+import time
 
 from functions import mainfuns
 from functions import login
@@ -63,8 +64,7 @@ class Hamster:
             proxies = mainfuns.format_proxy(proxy)
             
             #information
-            # login.info(data, proxies)
-            
+            login.info(data, proxies)
             
             #choose option to do
             mainfuns.log(f"{mainfuns.green}Buy all Skins: {mainfuns.white}1")
@@ -87,12 +87,17 @@ class Hamster:
             if option == 2:
                 total_task = task.task_list(data, proxies)
                 
+                #Attempting and 2 seconds
+                mainfuns.log(f"{mainfuns.green}Attempting to complete Tasks.")
+                time.sleep(2)
+                
                 #take out only the Youtube and social meida tasks
                 for selected_task in total_task:
-                    if selected_task['isCompleted'] == False and (selected_task['id'] != "invite_friends"):
+                    if selected_task['isCompleted'] == False and ("invite_friends" not in selected_task['id']):
                         
                         task_id = selected_task['id']
-                        
+                        task.check_task(data, proxies, task_id)
+                        mainfuns.delay(5)
 
 
 #running main function
